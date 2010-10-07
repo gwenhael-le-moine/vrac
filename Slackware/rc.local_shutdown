@@ -1,1 +1,7 @@
-/etc/rc.d/rc.local_shutdown
+[ -x /etc/rc.d/rc.tor ] && /etc/rc.d/rc.tor stop
+
+mv /tmp/*.t?z /home/installs/PKGs/
+for i in /home/installs/PKGs/*.t?z ; do
+	tXz=$(basename $i)
+	[ ! -e /var/adm/packages/${tXz%.t?z} ] && rm $i ;
+done
