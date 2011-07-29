@@ -27,7 +27,7 @@ int main( int argc, char* argv[] ) {
       float screeny = screenx * ratio;
       float dpi = sqrtf( ( resx * resy ) / ( screenx * screeny ) );
 
-      printf( "ratio: %.2f, %.2fx%.2f\n", ratio, screenx, screeny );
+      printf( "ratio: %.2f, %.2f\"×%.2f\" (%.2fcm×%.2fcm)\n", ratio, screenx, screeny, screenx*2.54, screeny*2.54 );
       printf( "dpi: %.2f\n", dpi );
    }
 }
